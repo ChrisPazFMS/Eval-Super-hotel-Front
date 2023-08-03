@@ -25,17 +25,14 @@ export class NavbarComponent implements OnInit {
   }
 
   loadAllHotels() {
-    this.apiService.getAllHotels().subscribe((hotels) => {
-      this.hotelService.setSelectedHotels(hotels);
-      this.router.navigate(['/hotels']);
-    });
+    this.hotelService.loadAllHotels();
   }
 
   loadHotelsByCity(city: City) {
     this.apiService.getHotelsByCity(city.id).subscribe((hotels: Hotel[]) => {
-      this.hotelService.setSelectedHotels(hotels); // Mettre à jour les hôtels sélectionnés
+      this.hotelService.setSelectedHotels(hotels);
       console.log('getHotelsByCity service : ' + JSON.stringify(hotels));
-      this.hotelService.emitSelectedHotels(); // Émettre les hôtels mis à jour
+      this.hotelService.emitSelectedHotels();
     });
   }
 }

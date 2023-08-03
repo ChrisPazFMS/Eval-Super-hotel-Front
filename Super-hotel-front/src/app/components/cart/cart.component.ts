@@ -37,4 +37,7 @@ export class CartComponent implements OnInit, OnDestroy {
   loadHotels() {
     this.hotels = this.hotelService.getSelectedHotels();
   }
+  loadAllHotels() {
+    this.hotelService.loadAllHotels();
+  }
 }
