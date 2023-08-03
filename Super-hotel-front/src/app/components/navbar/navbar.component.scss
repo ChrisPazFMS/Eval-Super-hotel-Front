@@ -9,3 +9,14 @@ transform: rotate(-10deg);
     background: #bb7371;
     color: #fff;
 }
+
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; /* Assurez-vous que la navbar est au-dessus de tout le contenu */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.356), 0 -5px 10px rgba(255, 255, 255, 0.356);
+    background-color: #ffffff; /* Ajoutez une couleur de fond blanche */
+  }
+  

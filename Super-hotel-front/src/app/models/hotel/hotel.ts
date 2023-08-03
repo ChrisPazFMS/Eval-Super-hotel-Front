@@ -1,33 +1,6 @@
 import { Bedroom } from '../bedroom/bedroom';
 import { City } from '../city/city';
 
-// export class Hotel {
-//   id: number;
-//   name: string;
-//   address: string;
-//   phone: string;
-//   // Relation avec la ville
-//   city: City;
-//   // Représenter les chambres de l'hôtel
-//   bedrooms: Bedroom[];
-
-//   constructor(
-//     id: number = 0,
-//     name: string = '',
-//     address: string = '',
-//     phone: string = '',
-//     city: City = new City(),
-//     bedrooms: Bedroom[] = []
-//   ) {
-//     this.id = id;
-//     this.name = name;
-//     this.address = address;
-//     this.phone = phone;
-//     this.city = city;
-//     this.bedrooms = bedrooms;
-//   }
-// }
-
 export class Hotel {
   id: number;
   name: string;

@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
     this.apiService.getAllCities().subscribe((cities: City[]) => {
       this.cities = cities;
     });
+    this.scrollToHotels();
   }
 
   loadAllHotels() {
@@ -34,5 +35,9 @@ export class NavbarComponent implements OnInit {
       console.log('getHotelsByCity service : ' + JSON.stringify(hotels));
       this.hotelService.emitSelectedHotels();
     });
+  }
+
+  scrollToHotels() {
+    this.router.navigate(['/cart'], { fragment: 'hotels-section' });
   }
 }
