@@ -13,6 +13,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
+  // Récupére les hôtels
   getAllHotels(): Observable<Hotel[]> {
     const url = `${this.baseUrl}${environment.hotels}`;
     return this.http.get<Hotel[]>(url).pipe(
@@ -24,8 +25,27 @@ export class ApiService {
     );
   }
 
+  // Récupére les villes
   getAllCities(): Observable<City[]> {
     const url = `${this.baseUrl}/cities`;
-    return this.http.get<City[]>(url);
+    return this.http.get<City[]>(url).pipe(
+      tap((cities) => console.log(cities)),
+      catchError((error) => {
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  // Récupére les hôtels par ID de la ville
+  getHotelsByCity(cityId: number): Observable<Hotel[]> {
+    const url = `${this.baseUrl}/hotels/cities/${cityId}/hotels`;
+    return this.http.get<Hotel[]>(url).pipe(
+      tap((hotels) => console.log(hotels)),
+      catchError((error) => {
+        console.error(error);
+        return throwError(error);
+      })
+    );
   }
 }
