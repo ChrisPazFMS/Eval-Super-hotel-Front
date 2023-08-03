@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <!-- Logo ou nom du site -->
+    <a routerLink="/">
+      <img src="../../../assets/img/Logo_Super_Hotel.png" alt="Logo de votre site" class="navbar-logo">
+    </a>
+  
+    <!-- Boutons ou liens de la navbar -->
+    <div class="navbar-buttons">
+      <button mat-button routerLink="/">Accueil</button>
+      <button mat-button routerLink="/hotels">Hôtels</button>
+      <ul>
+        <li *ngFor="let city of cities">{{ city.name }}</li>
+      </ul>
+      
+    </div>
+  
+    <!-- Menu déroulant pour les actions supplémentaires -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Mon Compte</button>
+      <button mat-menu-item>Déconnexion</button>
+    </mat-menu>
+  </mat-toolbar>
+  

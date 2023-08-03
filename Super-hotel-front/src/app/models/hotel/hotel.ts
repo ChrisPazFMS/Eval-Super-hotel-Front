@@ -1,13 +1,41 @@
 import { Bedroom } from '../bedroom/bedroom';
 import { City } from '../city/city';
 
+// export class Hotel {
+//   id: number;
+//   name: string;
+//   address: string;
+//   phone: string;
+//   // Relation avec la ville
+//   city: City;
+//   // Représenter les chambres de l'hôtel
+//   bedrooms: Bedroom[];
+
+//   constructor(
+//     id: number = 0,
+//     name: string = '',
+//     address: string = '',
+//     phone: string = '',
+//     city: City = new City(),
+//     bedrooms: Bedroom[] = []
+//   ) {
+//     this.id = id;
+//     this.name = name;
+//     this.address = address;
+//     this.phone = phone;
+//     this.city = city;
+//     this.bedrooms = bedrooms;
+//   }
+// }
+
 export class Hotel {
   id: number;
   name: string;
   address: string;
   phone: string;
-  city: City; // Propriété pour représenter la relation avec la ville
-  bedrooms: Bedroom[]; // Propriété pour représenter les chambres de l'hôtel
+  city: City;
+  bedrooms: Bedroom[];
+  description: string; // Assurez-vous que cette propriété est présente
 
   constructor(
     id: number = 0,
@@ -15,7 +43,8 @@ export class Hotel {
     address: string = '',
     phone: string = '',
     city: City = new City(),
-    bedrooms: Bedroom[] = []
+    bedrooms: Bedroom[] = [],
+    description: string = ''
   ) {
     this.id = id;
     this.name = name;
@@ -23,5 +52,6 @@ export class Hotel {
     this.phone = phone;
     this.city = city;
     this.bedrooms = bedrooms;
+    this.description = description; // Assurez-vous d'initialiser la propriété description
   }
 }

@@ -1,0 +1,16 @@
+.hotel-card-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5%;
+  
+    .hotel-card {
+      width: 300px;
+      margin: 10px;
+      mat-card{
+          background-color: rgba(255, 255, 255, 0.336);
+      }
+    }
+}
